@@ -447,24 +447,4 @@ This project is licensed under the **GPL-3.0 License** — see the [LICENSE](LIC
 
 <br/>
 
----
-
-### ⭐ Star this repo if it helped you!
-
-<br/>
-
-**Made with ❤️ by the Catuserbot Community**
-
-<br/>
-
-<a href="https://github.com/TgCatUB/catuserbot/stargazers">
-  <img src="https://img.shields.io/github/stars/TgCatUB/catuserbot?style=social" alt="Stars"/>
-</a>
-<a href="https://github.com/TgCatUB/catuserbot/network/members">
-  <img src="https://img.shields.io/github/forks/TgCatUB/catuserbot?style=social" alt="Forks"/>
-</a>
-<a href="https://github.com/TgCatUB/catuserbot/watchers">
-  <img src="https://img.shields.io/github/watchers/TgCatUB/catuserbot?style=social" alt="Watchers"/>
-</a>
-
 </div>
