@@ -4,7 +4,7 @@
   <img src="https://img.shields.io/badge/Telegram-Userbot-2CA5E0?style=for-the-badge&logo=telegram" />
 </p>
 
-<h1 align="center">🚀 Deploy Catuserbot on Fly.io (Step-by-Step)</h1>
+<h1 align="center">Deploy Catuserbot on Fly.io</h1>
 
 <p align="center">
   Fly.io is a strong alternative to Heroku, but deployment is terminal-first.<br/>
@@ -19,7 +19,7 @@
 
 <hr/>
 
-<h2>✅ Before You Start</h2>
+<h2>Before You Start</h2>
 <ul>
   <li>GitHub account</li>
   <li>Card added in Fly Billing (no charge unless you upgrade)</li>
@@ -28,33 +28,33 @@
 
 <hr/>
 
-<h2>1) 🧰 Install Fly CLI (<code>flyctl</code>)</h2>
+<h2>1) Install Fly CLI (<code>flyctl</code>)</h2>
 
-<h3>🐧 Linux / 🍎 macOS</h3>
+<h3>Linux / macOS</h3>
 <pre><code>curl -L https://fly.io/install.sh | sh</code></pre>
 
-<h3>🪟 Windows (PowerShell)</h3>
+<h3>Windows (PowerShell)</h3>
 <pre><code>iwr https://fly.io/install.ps1 -useb | iex</code></pre>
 
-<h3>🤖 Android (Termux)</h3>
+<h3>Android (Termux)</h3>
 <pre><code>pkg install root-repo
 pkg install flyctl</code></pre>
 
 <hr/>
 
-<h2>2) 🔐 Login to Fly</h2>
+<h2>2) Login to Fly</h2>
 <pre><code>flyctl auth login</code></pre>
 <p>It will open a browser. Login using GitHub.</p>
 
 <hr/>
 
-<h2>3) 📦 Clone Nekopack</h2>
+<h2>3) Clone Nekopack</h2>
 <pre><code>git clone https://github.com/tgcatub/nekopack/
 cd nekopack</code></pre>
 
 <hr/>
 
-<h2>4) 🚀 Create the Fly App (<code>flyctl launch</code>)</h2>
+<h2>4) Create the Fly App (<code>flyctl launch</code>)</h2>
 <p>
   Run launch inside the project folder. Fly will create your app config (fly.toml) and guide you through setup.
 </p>
@@ -73,7 +73,7 @@ cd nekopack</code></pre>
 
 <hr/>
 
-<h2>5) 🗄️ (Optional) Manage Postgres Later</h2>
+<h2>5) (Optional) Manage Postgres Later</h2>
 
 <p><b>List your Postgres clusters</b></p>
 <pre><code>flyctl postgres list</code></pre>
@@ -85,7 +85,7 @@ cd nekopack</code></pre>
 
 <hr/>
 
-<h2>6) 🔑 Add Secrets (Environment Variables)</h2>
+<h2>6) Add Secrets (Environment Variables)</h2>
 <p>
   Fly secrets are stored securely and injected as environment variables at runtime.
 </p>
@@ -111,7 +111,7 @@ TZ='Asia/Kolkata'</code></pre>
 
 <hr/>
 
-<h2>7) 🛠️ Configure Build (Recommended Approach)</h2>
+<h2>7) Configure Build (Recommended Approach)</h2>
 
 <p>
   <b>Best practice:</b> If your repo already contains a Dockerfile, Fly will use it automatically.
@@ -132,7 +132,7 @@ TZ='Asia/Kolkata'</code></pre>
 
 <hr/>
 
-<h2>8) 💾 Scale App Memory (Highly Recommended)</h2>
+<h2>8) Scale App Memory (Highly Recommended)</h2>
 <pre><code>flyctl scale memory 2048</code></pre>
 
 <p><b>(Optional) Scale DB memory too</b> (DB app name usually ends with <code>-db</code>):</p>
@@ -140,7 +140,7 @@ TZ='Asia/Kolkata'</code></pre>
 
 <hr/>
 
-<h2>9) 🚢 Deploy</h2>
+<h2>9) Deploy</h2>
 <pre><code>flyctl deploy</code></pre>
 
 <p><b>Watch logs</b></p>
@@ -148,15 +148,15 @@ TZ='Asia/Kolkata'</code></pre>
 
 <hr/>
 
-<h2>✅ Finish</h2>
+<h2>Finish</h2>
 <p>
-  🎉 Your Catuserbot should now be running on Fly.io.<br/>
+  🎉 Your Catuserbot now running on Fly.io.<br/>
   If anything fails, the first thing to check is: <code>flyctl logs</code>
 </p>
 
 <hr/>
 
-<h2>🧯 Quick Troubleshooting</h2>
+<h2>Quick Troubleshooting</h2>
 <table>
   <tr>
     <th align="left">Issue</th>
