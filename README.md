@@ -257,9 +257,6 @@ If your project requires Heroku-style buildpacks:
   builder = "heroku/buildpacks"
 ```
 
-> [!NOTE]
-> If your repo contains a `Dockerfile`, Fly will automatically use it for building.
-
 <br/>
 
 ## Scaling
