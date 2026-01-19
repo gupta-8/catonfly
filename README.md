@@ -1,5 +1,5 @@
 <!-- ========================================== -->
-<!--       🐱 CATUSERBOT × FLY.IO DEPLOY       -->
+<!--       CATUSERBOT × FLY.IO DEPLOY       -->
 <!-- ========================================== -->
 
 <div align="center">
@@ -20,48 +20,39 @@
   </a>
 </p>
 
-<!-- BADGES ROW 2 -->
-<p>
-  <img src="https://img.shields.io/badge/Platform-Linux%20|%20macOS%20|%20Windows%20|%20Termux-FF6B6B?style=flat-square" alt="Platform"/>
-  <img src="https://img.shields.io/badge/License-GPL--3.0-00D4AA?style=flat-square" alt="License"/>
-  <img src="https://img.shields.io/github/stars/TgCatUB/catuserbot?style=flat-square&color=FFD700" alt="Stars"/>
-  <img src="https://img.shields.io/github/forks/TgCatUB/catuserbot?style=flat-square&color=87CEEB" alt="Forks"/>
-</p>
-
 <!-- QUICK LINKS -->
 <p>
-  <a href="https://fly.io/dashboard"><kbd> 🎛️ Fly Dashboard </kbd></a>&nbsp;&nbsp;
-  <a href="https://github.com/tgcatub/nekopack/"><kbd> 📦 Nekopack Repo </kbd></a>&nbsp;&nbsp;
-  <a href="https://github.com/TgCatUB/catuserbot"><kbd> 🐱 Upstream Repo </kbd></a>&nbsp;&nbsp;
-  <a href="#-quick-start"><kbd> 🚀 Quick Start </kbd></a>
+  <a href="https://fly.io/dashboard"><kbd> Fly Dashboard </kbd></a>&nbsp;&nbsp;
+  <a href="https://github.com/tgcatub/nekopack/"><kbd> Nekopack Repo </kbd></a>&nbsp;&nbsp;
+  <a href="https://github.com/TgCatUB/catuserbot"><kbd> Upstream Repo </kbd></a>&nbsp;&nbsp;
+  <a href="#-quick-start"><kbd> Quick Start </kbd></a>
 </p>
 
 </div>
 
 ---
 
-## ✨ Why Fly.io?
+## Why Fly.io?
 
 <div align="center">
 
 | Feature | Heroku | Fly.io |
 |:-------:|:------:|:------:|
-| **Free Tier** | ❌ Discontinued | ✅ Available |
-| **Global Edge** | ❌ Limited | ✅ 30+ Regions |
-| **PostgreSQL** | 💰 Paid Add-on | ✅ Free Dev Plan |
-| **Performance** | 🐌 Slower | ⚡ Blazing Fast |
-| **Modern Stack** | 🏚️ Legacy | 🏗️ Container-native |
+| **Free Tier** | Discontinued | Available |
+| **Global Edge** | Limited | 30+ Regions |
+| **PostgreSQL** | Paid Add-on | Free Dev Plan |
+| **Performance** | Fast | Blazing Fast |
+| **Modern Stack** | Legacy | Container-native |
 
 </div>
 
 <br/>
 
 > [!TIP]
-> **Fly.io** offers better performance, global deployment, and a generous free tier — making it the perfect home for your Catuserbot! 🏠
-
+> **Fly.io** offers better performance, global deployment, and a generous free tier — making it the perfect home for your Catuserbot!
 <br/>
 
-## 📦 Prerequisites
+## Prerequisites
 
 <div align="center">
 
@@ -69,10 +60,10 @@
 ┌──────────────────────────────────────────────────────────────────┐
 │                     BEFORE YOU START                             │
 ├──────────────────────────────────────────────────────────────────┤
-│  ✅  GitHub Account (for authentication)                         │
-│  ✅  Fly.io Account with billing enabled (no charge for free)    │
-│  ✅  Terminal Access (Linux / macOS / Windows / Termux)          │
-│  ✅  Your Telegram API credentials (API_ID, API_HASH, etc.)      │
+│  GitHub Account (for authentication)                         │
+│  Fly.io Account with billing enabled (no charge for free)    │
+│  Terminal Access (Linux / macOS / Windows / Termux)          │
+│  Your Telegram API credentials (API_ID, API_HASH, etc.)      │
 └──────────────────────────────────────────────────────────────────┘
 ```
 
@@ -83,12 +74,12 @@
 
 <br/>
 
-## 🛠️ Installation
+## Installation
 
 ### Step 1: Install Fly CLI (`flyctl`)
 
 <details>
-<summary><b>🐧 Linux / 🍎 macOS</b></summary>
+<summary><b>Linux / macOS</b></summary>
 
 ```bash
 curl -L https://fly.io/install.sh | sh
@@ -103,7 +94,7 @@ export PATH="$FLYCTL_INSTALL/bin:$PATH"
 </details>
 
 <details>
-<summary><b>🪟 Windows (PowerShell)</b></summary>
+<summary><b>Windows (PowerShell)</b></summary>
 
 ```powershell
 iwr https://fly.io/install.ps1 -useb | iex
@@ -112,7 +103,7 @@ iwr https://fly.io/install.ps1 -useb | iex
 </details>
 
 <details>
-<summary><b>📱 Android (Termux)</b></summary>
+<summary><b>Android (Termux)</b></summary>
 
 ```bash
 pkg install root-repo
@@ -130,12 +121,12 @@ flyctl auth login
 ```
 
 <div align="center">
-  <kbd>🔐 A browser window will open — login with your GitHub account</kbd>
+  <kbd>A browser window will open — login with your GitHub account</kbd>
 </div>
 
 <br/>
 
-## 🚀 Quick Start
+## Quick Start
 
 <div align="center">
 
@@ -148,7 +139,7 @@ flyctl auth login
           ▼                   ▼                   ▼
      ┌─────────┐        ┌──────────┐        ┌──────────┐
      │  Clone  │   →    │  Launch  │   →    │  Deploy  │
-     │  Repo   │        │   App    │        │   🚀     │
+     │  Repo   │        │   App    │        │        │
      └─────────┘        └──────────┘        └──────────┘
           │                   │                   │
           ▼                   ▼                   ▼
@@ -159,7 +150,7 @@ flyctl auth login
 
 <br/>
 
-### 📥 Clone the Repository
+### Clone the Repository
 
 ```bash
 git clone https://github.com/tgcatub/nekopack/
@@ -168,7 +159,7 @@ cd nekopack
 
 <br/>
 
-### 🎯 Create Your Fly App
+### Create Your Fly App
 
 ```bash
 flyctl launch
@@ -190,10 +181,10 @@ flyctl launch
 
 <br/>
 
-### 🐘 PostgreSQL Management (Optional)
+### PostgreSQL Management (Optional)
 
 <details>
-<summary><b>📋 List your Postgres clusters</b></summary>
+<summary><b>List your Postgres clusters</b></summary>
 
 ```bash
 flyctl postgres list
@@ -202,7 +193,7 @@ flyctl postgres list
 </details>
 
 <details>
-<summary><b>🔗 Attach Postgres to your app (if not done during launch)</b></summary>
+<summary><b>Attach Postgres to your app (if not done during launch)</b></summary>
 
 ```bash
 flyctl postgres attach <POSTGRES_APP_NAME> -a <YOUR_APP_NAME>
@@ -212,7 +203,7 @@ flyctl postgres attach <POSTGRES_APP_NAME> -a <YOUR_APP_NAME>
 
 <br/>
 
-## 🔐 Environment Variables
+## Environment Variables
 
 Configure your secrets securely with Fly. These are injected as environment variables at runtime.
 
@@ -237,7 +228,7 @@ flyctl secrets set \
 
 <br/>
 
-### 📝 Secrets Reference
+### Secrets Reference
 
 <div align="center">
 
@@ -257,7 +248,7 @@ flyctl secrets set \
 
 <br/>
 
-### ✅ Verify Secrets
+### Verify Secrets
 
 ```bash
 flyctl secrets list
@@ -265,7 +256,7 @@ flyctl secrets list
 
 <br/>
 
-## ⚙️ Configuration
+## Configuration
 
 ### Build Configuration
 
@@ -287,15 +278,15 @@ If your project requires Heroku-style buildpacks:
 
 <br/>
 
-## 📈 Scaling
+## Scaling
 
-### 🧠 Scale App Memory (Highly Recommended)
+### Scale App Memory (Highly Recommended)
 
 ```bash
 flyctl scale memory 2048
 ```
 
-### 🗄️ Scale Database Memory (Optional)
+### Scale Database Memory (Optional)
 
 ```bash
 flyctl scale memory -a <YOUR_APP_NAME>-db 2048
@@ -314,13 +305,13 @@ flyctl scale memory -a <YOUR_APP_NAME>-db 2048
 
 <br/>
 
-## 🎬 Deploy!
+## Deploy!
 
 ```bash
 flyctl deploy
 ```
 
-### 📜 Watch Logs
+### Watch Logs
 
 ```bash
 flyctl logs
@@ -342,10 +333,10 @@ flyctl logs
 
 <br/>
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 <details>
-<summary><b>💥 Crash / Restart Loop</b></summary>
+<summary><b>Crash / Restart Loop</b></summary>
 
 **Cause:** Insufficient memory
 
@@ -357,7 +348,7 @@ flyctl scale memory 2048
 </details>
 
 <details>
-<summary><b>🔑 Secrets Not Working</b></summary>
+<summary><b>Secrets Not Working</b></summary>
 
 **Cause:** Secrets not properly set or app not redeployed
 
@@ -376,7 +367,7 @@ flyctl deploy
 </details>
 
 <details>
-<summary><b>🐘 Database Connection Errors</b></summary>
+<summary><b>Database Connection Errors</b></summary>
 
 **Cause:** PostgreSQL not attached to your app
 
@@ -392,7 +383,7 @@ flyctl postgres attach <POSTGRES_APP_NAME> -a <YOUR_APP_NAME>
 </details>
 
 <details>
-<summary><b>🌐 Region Latency Issues</b></summary>
+<summary><b>Region Latency Issues</b></summary>
 
 **Cause:** Deployed in a far region
 
@@ -409,7 +400,7 @@ flyctl regions set <REGION_CODE>
 
 <br/>
 
-## 📊 Useful Commands
+## Useful Commands
 
 <div align="center">
 
@@ -424,15 +415,3 @@ flyctl regions set <REGION_CODE>
 | `flyctl destroy` | Delete your app |
 
 </div>
-
-<br/>
-
-## 🤝 Contributing
-
-Contributions are welcome! Feel free to:
-
-1. 🍴 Fork the repository
-2. 🔧 Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. 💾 Commit your changes (`git commit -m 'Add amazing feature'`)
-4. 📤 Push to the branch (`git push origin feature/amazing-feature`)
-5. 🎉 Open a Pull Request
