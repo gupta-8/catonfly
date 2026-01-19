@@ -2,7 +2,6 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Fly.io-Deploy-blueviolet?style=for-the-badge&logo=fly.io" />
   <img src="https://img.shields.io/badge/Telegram-Userbot-2CA5E0?style=for-the-badge&logo=telegram" />
-  <img src="https://img.shields.io/badge/Status-Ready-success?style=for-the-badge" />
 </p>
 
 <h1 align="center">🚀 Deploy Catuserbot on Fly.io (Step-by-Step)</h1>
