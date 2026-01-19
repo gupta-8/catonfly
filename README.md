@@ -1,25 +1,8 @@
 <!-- ========================================== -->
 <!--       CATUSERBOT × FLY.IO DEPLOY           -->
 <!-- ========================================== -->
+
 ## Deploy CatUserBot on fly.io
-
-<div align="center">
-
-<!-- BADGES ROW 1 -->
-<p>
-  <a href="https://fly.io">
-    <img src="https://img.shields.io/badge/Fly.io-Deploy%20Ready-8B5CF6?style=for-the-badge&logo=fly.io&logoColor=white" alt="Fly.io"/>
-  </a>
-  <a href="https://telegram.org">
-    <img src="https://img.shields.io/badge/Telegram-Userbot-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram"/>
-  </a>
-  <a href="https://www.python.org/">
-    <img src="https://img.shields.io/badge/Python-3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
-  </a>
-  <a href="https://www.postgresql.org/">
-    <img src="https://img.shields.io/badge/PostgreSQL-Database-336791?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL"/>
-  </a>
-</p>
 
 <!-- QUICK LINKS -->
 <p>
