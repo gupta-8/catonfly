@@ -5,13 +5,6 @@
   <img src="https://img.shields.io/badge/Status-Ready-success?style=for-the-badge" />
 </p>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3.x-3776AB?style=flat-square&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/github/license/TgCatUB/catuserbot?style=flat-square" />
-  <img src="https://img.shields.io/github/stars/TgCatUB/catuserbot?style=flat-square" />
-  <img src="https://img.shields.io/github/forks/TgCatUB/catuserbot?style=flat-square" />
-</p>
-
 <h1 align="center">🚀 Deploy Catuserbot on Fly.io (Step-by-Step)</h1>
 
 <p align="center">
