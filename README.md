@@ -1,177 +1,470 @@
-<!-- ================= BADGES ================= -->
-<p align="center">
-  <img src="https://img.shields.io/badge/Fly.io-Deploy-blueviolet?style=for-the-badge&logo=fly.io" />
-  <img src="https://img.shields.io/badge/Telegram-Userbot-2CA5E0?style=for-the-badge&logo=telegram" />
-</p>
+<!-- ========================================== -->
+<!--       🐱 CATUSERBOT × FLY.IO DEPLOY       -->
+<!-- ========================================== -->
 
-<h1 align="center">Deploy Catuserbot on Fly.io</h1>
+<div align="center">
 
-<p align="center">
-  Fly.io is a strong alternative to Heroku, but deployment is terminal-first.<br/>
-  This guide deploys <b>Catuserbot / Nekopack</b> on Fly with Postgres + secrets + recommended memory settings.
-</p>
-
-<p align="center">
-  <a href="https://fly.io/dashboard"><b>Fly Dashboard</b></a> •
-  <a href="https://github.com/tgcatub/nekopack/"><b>Nekopack Repo</b></a> •
-  <a href="https://github.com/TgCatUB/catuserbot"><b>Upstream Repo</b></a>
-</p>
-
-<hr/>
-
-<h2>Before You Start</h2>
-<ul>
-  <li>GitHub account</li>
-  <li>Card added in Fly Billing (no charge unless you upgrade)</li>
-  <li>Terminal access (Linux / macOS / Windows / Termux)</li>
-</ul>
-
-<hr/>
-
-<h2>1) Install Fly CLI (<code>flyctl</code>)</h2>
-
-<h3>Linux / macOS</h3>
-<pre><code>curl -L https://fly.io/install.sh | sh</code></pre>
-
-<h3>Windows (PowerShell)</h3>
-<pre><code>iwr https://fly.io/install.ps1 -useb | iex</code></pre>
-
-<h3>Android (Termux)</h3>
-<pre><code>pkg install root-repo
-pkg install flyctl</code></pre>
-
-<hr/>
-
-<h2>2) Login to Fly</h2>
-<pre><code>flyctl auth login</code></pre>
-<p>It will open a browser. Login using GitHub.</p>
-
-<hr/>
-
-<h2>3) Clone Nekopack</h2>
-<pre><code>git clone https://github.com/tgcatub/nekopack/
-cd nekopack</code></pre>
-
-<hr/>
-
-<h2>4) Create the Fly App (<code>flyctl launch</code>)</h2>
+<!-- BADGES ROW 1 -->
 <p>
-  Run launch inside the project folder. Fly will create your app config (fly.toml) and guide you through setup.
+  <a href="https://fly.io">
+    <img src="https://img.shields.io/badge/Fly.io-Deploy%20Ready-8B5CF6?style=for-the-badge&logo=fly.io&logoColor=white" alt="Fly.io"/>
+  </a>
+  <a href="https://telegram.org">
+    <img src="https://img.shields.io/badge/Telegram-Userbot-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram"/>
+  </a>
+  <a href="https://www.python.org/">
+    <img src="https://img.shields.io/badge/Python-3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
+  </a>
+  <a href="https://www.postgresql.org/">
+    <img src="https://img.shields.io/badge/PostgreSQL-Database-336791?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL"/>
+  </a>
 </p>
-<pre><code>flyctl launch</code></pre>
 
-<ul>
-  <li>If asked to overwrite Procfile → type <code>n</code></li>
-  <li>Pick any app name you like</li>
-  <li><b>Region tip:</b> choose <code>mia</code> (Miami) for good ping</li>
-  <li>When asked for PostgreSQL → choose <b>Yes</b> and select <b>Development</b> plan</li>
-</ul>
-
+<!-- BADGES ROW 2 -->
 <p>
-  <i>Why Postgres?</i> Catuserbot deployments commonly rely on a database. Fly can create + attach Postgres during launch.
+  <img src="https://img.shields.io/badge/Platform-Linux%20|%20macOS%20|%20Windows%20|%20Termux-FF6B6B?style=flat-square" alt="Platform"/>
+  <img src="https://img.shields.io/badge/License-GPL--3.0-00D4AA?style=flat-square" alt="License"/>
+  <img src="https://img.shields.io/github/stars/TgCatUB/catuserbot?style=flat-square&color=FFD700" alt="Stars"/>
+  <img src="https://img.shields.io/github/forks/TgCatUB/catuserbot?style=flat-square&color=87CEEB" alt="Forks"/>
 </p>
 
-<hr/>
-
-<h2>5) (Optional) Manage Postgres Later</h2>
-
-<p><b>List your Postgres clusters</b></p>
-<pre><code>flyctl postgres list</code></pre>
-
-<p><b>Attach an existing Postgres cluster to your app</b> (if you didn’t attach during launch)</p>
-<pre><code>flyctl postgres attach &lt;POSTGRES_APP_NAME&gt; -a &lt;YOUR_APP_NAME&gt;</code></pre>
-
-<p><i>Fly provides a dedicated command to attach Postgres to an app.</i></p>
-
-<hr/>
-
-<h2>6) Add Secrets (Environment Variables)</h2>
+<!-- QUICK LINKS -->
 <p>
-  Fly secrets are stored securely and injected as environment variables at runtime.
+  <a href="https://fly.io/dashboard"><kbd> 🎛️ Fly Dashboard </kbd></a>&nbsp;&nbsp;
+  <a href="https://github.com/tgcatub/nekopack/"><kbd> 📦 Nekopack Repo </kbd></a>&nbsp;&nbsp;
+  <a href="https://github.com/TgCatUB/catuserbot"><kbd> 🐱 Upstream Repo </kbd></a>&nbsp;&nbsp;
+  <a href="#-quick-start"><kbd> 🚀 Quick Start </kbd></a>
 </p>
 
-<p><b>Bulk set secrets (copy-paste and fill values)</b></p>
-<pre><code>flyctl secrets set \
-APP_ID='' \
-API_HASH='' \
-ALIVE_NAME='' \
-ALIVE_PIC='' \
-STRING_SESSION='' \
-TG_BOT_TOKEN='' \
-PRIVATE_GROUP_BOT_API_ID='' \
-COMMAND_HAND_LER='' \
-ENV='ANYTHING' \
-BADCAT='True' \
-EXTERNAL_REPO='True' \
-UPSTREAM_REPO='https://github.com/TgCatUB/catuserbot' \
-TZ='Asia/Kolkata'</code></pre>
+</div>
 
-<p><b>Verify secrets exist</b></p>
-<pre><code>flyctl secrets list</code></pre>
+---
 
-<hr/>
+## ✨ Why Fly.io?
 
-<h2>7) Configure Build (Recommended Approach)</h2>
+<div align="center">
 
-<p>
-  <b>Best practice:</b> If your repo already contains a Dockerfile, Fly will use it automatically.
-  If it’s buildpack-based, Fly supports builders/buildpacks configuration in <code>fly.toml</code>.
-</p>
+| Feature | Heroku | Fly.io |
+|:-------:|:------:|:------:|
+| **Free Tier** | ❌ Discontinued | ✅ Available |
+| **Global Edge** | ❌ Limited | ✅ 30+ Regions |
+| **PostgreSQL** | 💰 Paid Add-on | ✅ Free Dev Plan |
+| **Performance** | 🐌 Slower | ⚡ Blazing Fast |
+| **Modern Stack** | 🏚️ Legacy | 🏗️ Container-native |
 
-<p><b>Open fly.toml</b></p>
-<pre><code>nano fly.toml</code></pre>
+</div>
 
-<p>
-  If your setup requires a Heroku-style buildpack builder, you can configure the build section.
-  (Some projects use this to match Heroku build behavior.)
-</p>
+<br/>
 
-<p><b>Example build section</b> (only if your project needs it):</p>
-<pre><code>[build]
-  builder = "heroku/buildpacks"</code></pre>
+> [!TIP]
+> **Fly.io** offers better performance, global deployment, and a generous free tier — making it the perfect home for your Catuserbot! 🏠
 
-<hr/>
+<br/>
 
-<h2>8) Scale App Memory (Highly Recommended)</h2>
-<pre><code>flyctl scale memory 2048</code></pre>
+## 📦 Prerequisites
 
-<p><b>(Optional) Scale DB memory too</b> (DB app name usually ends with <code>-db</code>):</p>
-<pre><code>flyctl scale memory -a &lt;YOUR_APP_NAME&gt;-db 2048</code></pre>
+<div align="center">
 
-<hr/>
+```
+┌──────────────────────────────────────────────────────────────────┐
+│                     BEFORE YOU START                             │
+├──────────────────────────────────────────────────────────────────┤
+│  ✅  GitHub Account (for authentication)                         │
+│  ✅  Fly.io Account with billing enabled (no charge for free)    │
+│  ✅  Terminal Access (Linux / macOS / Windows / Termux)          │
+│  ✅  Your Telegram API credentials (API_ID, API_HASH, etc.)      │
+└──────────────────────────────────────────────────────────────────┘
+```
 
-<h2>9) Deploy</h2>
-<pre><code>flyctl deploy</code></pre>
+</div>
 
-<p><b>Watch logs</b></p>
-<pre><code>flyctl logs</code></pre>
+> [!NOTE]
+> Adding a card to Fly Billing is required but you **won't be charged** unless you exceed free tier limits or manually upgrade.
 
-<hr/>
+<br/>
 
-<h2>Finish</h2>
-<p>
-  🎉 Your Catuserbot now running on Fly.io.<br/>
-  If anything fails, the first thing to check is: <code>flyctl logs</code>
-</p>
+## 🛠️ Installation
 
-<hr/>
+### Step 1: Install Fly CLI (`flyctl`)
 
-<h2>Quick Troubleshooting</h2>
-<table>
-  <tr>
-    <th align="left">Issue</th>
-    <th align="left">Fix</th>
-  </tr>
-  <tr>
-    <td>Crash / restart loop</td>
-    <td>Increase RAM: <code>flyctl scale memory 2048</code></td>
-  </tr>
-  <tr>
-    <td>Secrets not working</td>
-    <td>Re-set secrets and redeploy; confirm with <code>flyctl secrets list</code></td>
-  </tr>
-  <tr>
-    <td>DB connection errors</td>
-    <td>Ensure Postgres is attached (use <code>flyctl postgres attach</code>)</td>
-  </tr>
-</table>
+<details>
+<summary><b>🐧 Linux / 🍎 macOS</b></summary>
+
+```bash
+curl -L https://fly.io/install.sh | sh
+```
+
+After installation, add to your PATH:
+```bash
+export FLYCTL_INSTALL="/home/$USER/.fly"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"
+```
+
+</details>
+
+<details>
+<summary><b>🪟 Windows (PowerShell)</b></summary>
+
+```powershell
+iwr https://fly.io/install.ps1 -useb | iex
+```
+
+</details>
+
+<details>
+<summary><b>📱 Android (Termux)</b></summary>
+
+```bash
+pkg install root-repo
+pkg install flyctl
+```
+
+</details>
+
+<br/>
+
+### Step 2: Authenticate with Fly.io
+
+```bash
+flyctl auth login
+```
+
+<div align="center">
+  <kbd>🔐 A browser window will open — login with your GitHub account</kbd>
+</div>
+
+<br/>
+
+## 🚀 Quick Start
+
+<div align="center">
+
+```
+     ┌─────────────────────────────────────────────────────┐
+     │                  DEPLOYMENT FLOW                    │
+     └─────────────────────────────────────────────────────┘
+                              │
+          ┌───────────────────┼───────────────────┐
+          ▼                   ▼                   ▼
+     ┌─────────┐        ┌──────────┐        ┌──────────┐
+     │  Clone  │   →    │  Launch  │   →    │  Deploy  │
+     │  Repo   │        │   App    │        │   🚀     │
+     └─────────┘        └──────────┘        └──────────┘
+          │                   │                   │
+          ▼                   ▼                   ▼
+      git clone          flyctl launch       flyctl deploy
+```
+
+</div>
+
+<br/>
+
+### 📥 Clone the Repository
+
+```bash
+git clone https://github.com/tgcatub/nekopack/
+cd nekopack
+```
+
+<br/>
+
+### 🎯 Create Your Fly App
+
+```bash
+flyctl launch
+```
+
+<div align="center">
+
+| Prompt | Recommended Answer |
+|:-------|:-------------------|
+| Overwrite Procfile? | Type `n` (No) |
+| App name | Choose any unique name |
+| Region | `mia` (Miami) for best ping |
+| PostgreSQL | **Yes** → Development plan |
+
+</div>
+
+> [!IMPORTANT]
+> When prompted for **PostgreSQL**, select **Yes** and choose the **Development** plan. Catuserbot requires a database to function properly.
+
+<br/>
+
+### 🐘 PostgreSQL Management (Optional)
+
+<details>
+<summary><b>📋 List your Postgres clusters</b></summary>
+
+```bash
+flyctl postgres list
+```
+
+</details>
+
+<details>
+<summary><b>🔗 Attach Postgres to your app (if not done during launch)</b></summary>
+
+```bash
+flyctl postgres attach <POSTGRES_APP_NAME> -a <YOUR_APP_NAME>
+```
+
+</details>
+
+<br/>
+
+## 🔐 Environment Variables
+
+Configure your secrets securely with Fly. These are injected as environment variables at runtime.
+
+### Set All Secrets at Once
+
+```bash
+flyctl secrets set \
+  APP_ID='YOUR_APP_ID' \
+  API_HASH='YOUR_API_HASH' \
+  ALIVE_NAME='YOUR_BOT_NAME' \
+  ALIVE_PIC='YOUR_ALIVE_PIC_URL' \
+  STRING_SESSION='YOUR_STRING_SESSION' \
+  TG_BOT_TOKEN='YOUR_BOT_TOKEN' \
+  PRIVATE_GROUP_BOT_API_ID='YOUR_GROUP_ID' \
+  COMMAND_HAND_LER='.' \
+  ENV='ANYTHING' \
+  BADCAT='True' \
+  EXTERNAL_REPO='True' \
+  UPSTREAM_REPO='https://github.com/TgCatUB/catuserbot' \
+  TZ='Asia/Kolkata'
+```
+
+<br/>
+
+### 📝 Secrets Reference
+
+<div align="center">
+
+| Variable | Description | Required |
+|:---------|:------------|:--------:|
+| `APP_ID` | Telegram API ID from [my.telegram.org](https://my.telegram.org) | ✅ |
+| `API_HASH` | Telegram API Hash from [my.telegram.org](https://my.telegram.org) | ✅ |
+| `STRING_SESSION` | Pyrogram/Telethon session string | ✅ |
+| `TG_BOT_TOKEN` | Bot token from [@BotFather](https://t.me/BotFather) | ✅ |
+| `ALIVE_NAME` | Display name for alive message | ❌ |
+| `ALIVE_PIC` | Image URL for alive command | ❌ |
+| `PRIVATE_GROUP_BOT_API_ID` | Your private log group ID | ❌ |
+| `COMMAND_HAND_LER` | Command prefix (default: `.`) | ❌ |
+| `TZ` | Timezone (e.g., `Asia/Kolkata`) | ❌ |
+
+</div>
+
+<br/>
+
+### ✅ Verify Secrets
+
+```bash
+flyctl secrets list
+```
+
+<br/>
+
+## ⚙️ Configuration
+
+### Build Configuration
+
+Edit `fly.toml` to customize your build:
+
+```bash
+nano fly.toml
+```
+
+If your project requires Heroku-style buildpacks:
+
+```toml
+[build]
+  builder = "heroku/buildpacks"
+```
+
+> [!NOTE]
+> If your repo contains a `Dockerfile`, Fly will automatically use it for building.
+
+<br/>
+
+## 📈 Scaling
+
+### 🧠 Scale App Memory (Highly Recommended)
+
+```bash
+flyctl scale memory 2048
+```
+
+### 🗄️ Scale Database Memory (Optional)
+
+```bash
+flyctl scale memory -a <YOUR_APP_NAME>-db 2048
+```
+
+<div align="center">
+
+| Memory | Use Case |
+|:------:|:---------|
+| `512MB` | Minimal testing |
+| `1024MB` | Light usage |
+| `2048MB` | **Recommended** for stable operation |
+| `4096MB` | Heavy usage / multiple plugins |
+
+</div>
+
+<br/>
+
+## 🎬 Deploy!
+
+```bash
+flyctl deploy
+```
+
+### 📜 Watch Logs
+
+```bash
+flyctl logs
+```
+
+<br/>
+
+<div align="center">
+
+```
+╔══════════════════════════════════════════════════════════════╗
+║                                                              ║
+║   🎉  CONGRATULATIONS!  Your Catuserbot is now LIVE!  🎉    ║
+║                                                              ║
+╚══════════════════════════════════════════════════════════════╝
+```
+
+</div>
+
+<br/>
+
+## 🐛 Troubleshooting
+
+<details>
+<summary><b>💥 Crash / Restart Loop</b></summary>
+
+**Cause:** Insufficient memory
+
+**Solution:**
+```bash
+flyctl scale memory 2048
+```
+
+</details>
+
+<details>
+<summary><b>🔑 Secrets Not Working</b></summary>
+
+**Cause:** Secrets not properly set or app not redeployed
+
+**Solution:**
+```bash
+# Re-set secrets
+flyctl secrets set KEY='value'
+
+# Verify
+flyctl secrets list
+
+# Redeploy
+flyctl deploy
+```
+
+</details>
+
+<details>
+<summary><b>🐘 Database Connection Errors</b></summary>
+
+**Cause:** PostgreSQL not attached to your app
+
+**Solution:**
+```bash
+# List available postgres clusters
+flyctl postgres list
+
+# Attach to your app
+flyctl postgres attach <POSTGRES_APP_NAME> -a <YOUR_APP_NAME>
+```
+
+</details>
+
+<details>
+<summary><b>🌐 Region Latency Issues</b></summary>
+
+**Cause:** Deployed in a far region
+
+**Solution:**
+```bash
+# List available regions
+flyctl platform regions
+
+# Scale to a closer region
+flyctl regions set <REGION_CODE>
+```
+
+</details>
+
+<br/>
+
+## 📊 Useful Commands
+
+<div align="center">
+
+| Command | Description |
+|:--------|:------------|
+| `flyctl status` | Check app status |
+| `flyctl logs` | View live logs |
+| `flyctl ssh console` | SSH into your app |
+| `flyctl scale show` | View current scaling |
+| `flyctl releases` | List deployment history |
+| `flyctl restart` | Restart your app |
+| `flyctl destroy` | Delete your app |
+
+</div>
+
+<br/>
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to:
+
+1. 🍴 Fork the repository
+2. 🔧 Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. 💾 Commit your changes (`git commit -m 'Add amazing feature'`)
+4. 📤 Push to the branch (`git push origin feature/amazing-feature`)
+5. 🎉 Open a Pull Request
+
+<br/>
+
+## 📜 License
+
+<div align="center">
+
+This project is licensed under the **GPL-3.0 License** — see the [LICENSE](LICENSE) file for details.
+
+<br/>
+
+---
+
+### ⭐ Star this repo if it helped you!
+
+<br/>
+
+**Made with ❤️ by the Catuserbot Community**
+
+<br/>
+
+<a href="https://github.com/TgCatUB/catuserbot/stargazers">
+  <img src="https://img.shields.io/github/stars/TgCatUB/catuserbot?style=social" alt="Stars"/>
+</a>
+<a href="https://github.com/TgCatUB/catuserbot/network/members">
+  <img src="https://img.shields.io/github/forks/TgCatUB/catuserbot?style=social" alt="Forks"/>
+</a>
+<a href="https://github.com/TgCatUB/catuserbot/watchers">
+  <img src="https://img.shields.io/github/watchers/TgCatUB/catuserbot?style=social" alt="Watchers"/>
+</a>
+
+</div>
